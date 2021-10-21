@@ -18,11 +18,32 @@ public class GildedRoseTest {
 
     @Test
     public void SystemLowersValue(){
-        GildedRose app = new GildedRose();
-       app= CreateAndUpdate("foo",15,25);
+
+        GildedRose app= CreateAndUpdate("foo",15,25);
         //assertEquals("foo", app.items[0].name);
         assertEquals(14,app.items[0].sellIn);
         assertEquals(24,app.items[0].quality);
 
+    }
+    @Test
+    public void QualityDegradesTwiceAsFast()
+    {
+        GildedRose app = CreateAndUpdate("foo", 0, 25);
+
+        //assert quality
+        assertEquals(23, app.items[0].quality);
+    }
+
+    @Test
+    public void QualityNeverNegative()
+    {
+        //arrange
+        GildedRose app = CreateAndUpdate("foo",10, 0);
+
+         //assert quality
+        assertEquals(0, app.items[0].quality);
+
+        //assert sellin
+        assertEquals(9, app.items[0].sellIn);
     }
 }
