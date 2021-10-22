@@ -39,7 +39,7 @@ public class Behavior {
         {
             if(i.quality <0)
                 i.quality=0;
-                System.out.println("never " + i.quality);
+                System.out.println("never =" + i.quality);
                 return i;
 
         }

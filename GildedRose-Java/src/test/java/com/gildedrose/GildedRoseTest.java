@@ -54,7 +54,7 @@ public class GildedRoseTest {
          //assert quality
         assertEquals(0, app.item[0].quality);
 
-        //assert sellin
+        //assert sellinn
         assertEquals(9, app.item[0].sellIn);
     }
     @Test

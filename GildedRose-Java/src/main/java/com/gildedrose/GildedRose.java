@@ -13,7 +13,7 @@ class GildedRose {
     public GildedRose(){}
     public GildedRose(Item[] item) {
         this.item = item;
-      //  this.initialize();
+      ///  this.initialize();
     }
 
     private void initialize (){
