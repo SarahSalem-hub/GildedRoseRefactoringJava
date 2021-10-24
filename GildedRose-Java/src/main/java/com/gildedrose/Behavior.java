@@ -21,14 +21,20 @@ public class Behavior {
     }
     public Item LowersValue(Item i)
     {
-        i.quality = i.quality - 1;
-        i.sellIn = i.sellIn - 1;
-
+        if (i.sellIn >0)
+        {
+            i.quality = i.quality - 1;
+            i.sellIn = i.sellIn - 1;
+        }
+        if (i.sellIn <=0)
+        {
+            i.quality = i.quality - 2;
+        }
         return i;
     }
     public Item QualityDegradesTwiceAsFast(Item i)
     {
-        i.quality = i.quality - 2;
+
         i.sellIn = i.sellIn - 1;
         return i;
     }
@@ -42,8 +48,40 @@ public class Behavior {
                 System.out.println("never =" + i.quality);
                 return i;
 
+
         }
-        else
+
+
+
+        return i;
+    }
+    public Item BackstagePasses(Item i)
+    {
+        if (i.sellIn <=10 && i.sellIn>=6)
+        {
+            System.out.println("less than 10");
+            System.out.println(" B i.quality = +2   "+ i.quality);
+
+            i.quality += 2 ;
+            i.sellIn --;
+            System.out.println(" A i.quality = +2   "+ i.quality);
+        }
+        if (i.sellIn <= 5 )
+        {
+            System.out.println("less than 5");
+
+            i.quality += 3;
+            i.sellIn --;
+
+        }
+        return i;
+    }
+    public Item SulfurasLegendary(Item i)
+    {
+        i.quality = i.quality;
+        i.sellIn  = i.sellIn;
+        System.out.println("q= "+i.quality);
+        System.out.println("s= "+i.sellIn);
 
         return i;
     }

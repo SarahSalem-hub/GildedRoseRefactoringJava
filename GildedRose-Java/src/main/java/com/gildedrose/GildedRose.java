@@ -57,6 +57,19 @@ class GildedRose {
                 System.out.println("Q Q "+item[i].quality);
                 B.AgedBrie(item[i]);
             }
+            if (item[i].name.equals("Backstage passes to a TAFKAL80ETC concert"))
+            {
+                System.out.println("Back1");
+                B.BackstagePasses(item[i]);
+                System.out.println("Back2");
+
+            }
+            if (item[i].name.equals("Sulfuras, Hand of Ragnaros"))
+            {
+                B.SulfurasLegendary(item[i]);
+            }
+           // else
+                // here item ,for example the foo item
 
         }
     }

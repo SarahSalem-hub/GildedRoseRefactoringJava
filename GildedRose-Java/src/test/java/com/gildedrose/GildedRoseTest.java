@@ -93,11 +93,20 @@ public class GildedRoseTest {
 
         //assert quality
         assertEquals(80, app.item[0].quality);
-        System.out.println(app.item[0].name);
+       // System.out.println(app.item[0].name);
         //assert sellin
         assertEquals(0, app.item[0].sellIn);
-        System.out.println(app.item[0].quality);
-        System.out.println(app.item[0].sellIn);
+        //System.out.println(app.item[0].quality);
+        //System.out.println(app.item[0].sellIn);
+
+    }
+    @Test
+    public void BackStagePasses()
+    {
+        GildedRose app = CreateAndUpdate("Backstage passes to a TAFKAL80ETC concert",5, 40);
+        assertEquals(43, app.item[0].quality);
+        assertEquals(4, app.item[0].sellIn);
+
 
     }
 }
