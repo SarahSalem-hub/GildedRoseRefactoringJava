@@ -14,6 +14,7 @@ public class GildedRoseTest {
         Item[] items = new Item[]  {new Item(Name,Sellin, Quality )};
         GildedRose app = new GildedRose(items);
         System.out.println("items" + items[0]);
+
         //app.updateQuality();
         app.Quality();
         return app;
@@ -29,7 +30,6 @@ public class GildedRoseTest {
 
         GildedRose app= CreateAndUpdate("foo",15,25);
 
-        //assertEquals("foo", app.items[0].name);
         assertEquals(14,app.item[0].sellIn);
         assertEquals(24,app.item[0].quality);
 
@@ -62,15 +62,13 @@ public class GildedRoseTest {
     {
         //arrange
         GildedRose app = CreateAndUpdate("Aged Brie", 1, 0);
-        //System.out.println("app   "+ app.item[0].name);
         //assert sellin
         assertEquals(0, app.item[0].sellIn);
 
 
         //assert quality
         assertEquals(1, app.item[0].quality);
-        //System.out.println("app   "+ app.item[0].quality);
-        //System.out.println("app   "+ app.item[0].sellIn);
+
 
     }
     @Test
@@ -93,11 +91,8 @@ public class GildedRoseTest {
 
         //assert quality
         assertEquals(80, app.item[0].quality);
-       // System.out.println(app.item[0].name);
         //assert sellin
         assertEquals(0, app.item[0].sellIn);
-        //System.out.println(app.item[0].quality);
-        //System.out.println(app.item[0].sellIn);
 
     }
     @Test
